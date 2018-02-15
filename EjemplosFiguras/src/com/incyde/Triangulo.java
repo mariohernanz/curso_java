@@ -12,7 +12,7 @@ public class Triangulo {
 	}
 	
 	public float area() {
-		return (base * altura)/2;
+		return (this.base * this.altura)/2;
 	}
 	
 	public void dibujar( ) {
@@ -20,6 +20,6 @@ public class Triangulo {
 	}
 	
 	public String toString() {
-		return "Triangulo " + base + " x " + altura + " - Color: " + color ;
+		return "Triangulo " + this.base + " x " + this.altura + " - Color: " + this.color ;
 	}
 }
