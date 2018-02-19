@@ -3,7 +3,18 @@ package com.incyde;
 public class ClaseProgramaPrincipal {
 	
 	public static void main(String[] args) {
-		Triangulo[] triangulos;
+		Cuadrado miCuadrado = new Cuadrado();
+		// miCuadrado.longitudesCuadrado = 5;
+		System.out.println("Area " + miCuadrado.area());
+		System.out.println("El color del cuadrado es " + miCuadrado.color);
+		
+		Triangulo miTrinagulo = new Triangulo("rojo", 4, 6);
+		System.out.println("El color del triangulo es " + miTrinagulo.color);
+		System.out.println("El area del triangulo es " + miTrinagulo.area());
+		
+	}
+public static void mainArray() {
+	Triangulo[] triangulos;
 		triangulos = new Triangulo[3];
 		triangulos[0] = new Triangulo();
 		triangulos[1] = new Triangulo();
@@ -17,8 +28,7 @@ public class ClaseProgramaPrincipal {
 		triangulos[0].dibujar();
 		triangulos[1].dibujar();
 		triangulos[2].dibujar();
-	}
-
+}
 	public static void mainBascio() {
 		Triangulo trianguloAngela = new Triangulo();
 		float[] tempLongitudes = {2, 3, 5};
@@ -45,8 +55,8 @@ public class ClaseProgramaPrincipal {
 		
 		
 		Cuadrado cuadradoMario = new Cuadrado();
-		float LongitudesCuadrado = 4;
-		cuadradoMario.longitudesCuadrado = LongitudesCuadrado;
+		cuadradoMario.base = 4;
+		cuadradoMario.altura = 4;
 		cuadradoMario.color = "Verde";
 		System.out.println("El perimetro del cuadrado es " + cuadradoMario.perimetro());
 		System.out.println("El area del cuadrado es " + cuadradoMario.area());

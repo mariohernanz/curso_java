@@ -1,21 +1,33 @@
 package com.incyde;
 
-public class Cuadrado {
+public class Cuadrado extends Rectangulo {
 	
-	public float longitudesCuadrado;
-	public String color;
 	
-	public float perimetro() {
-		return longitudesCuadrado * 4;
+	
+
+	public Cuadrado() {
+		this.altura = 4;
+		this.base = 4;
+		
 	}
-	public float area() {
-		return longitudesCuadrado * longitudesCuadrado / 2;
+	/*
+	public Cuadrado(int base) {
+		this.base = base;
+		this.color = "transparente";
 	}
-	public void dibujar( ) {
-		System.out.println("Dibujando " + toString());
+	
+	public Cuadrado(String color,int altura) {
+		this.color = color;
+		this.altura = altura;
 	}
+	
+	public Cuadrado(String color) {
+		this.color = color;
+		this.altura = 1f;
+	}*/
+	
 	public String toString() {
-	return "Cuadrado " + longitudesCuadrado + " x " + longitudesCuadrado + " - Color: " + color ;
+	return "Cuadrado " + altura + " x " + base + " - Color: " + color ;
 	}
 
 }
