@@ -1,32 +1,32 @@
 package com.incyde;
 
 public class JuegoAhorcado {
-	 static String palabraElegida;
-	 static String letra;
-	 static String guiones;
-	 static String nuevosGuiones;
-	 static String nuevosGuionesAnterior;
+	 static String palabraElegida = "";
+	 static String letra = "";
+	 static String guiones = "";
+	 static String nuevosGuiones = "";
+	 static String nuevosGuionesAnterior = "";
+	 static ListaFalladas listaFalladas;
 	 static int LongitudPalabra;
+	 static int contadorFallos = 0;
 	 
 	static String soloGuiones_A() {
 		String guiones = "";
 		for (int i = 0; i <palabraElegida.length(); i++) {
 			guiones = guiones + "-";
 		}
-		return guiones;}
-	//static String soloGuiones_B() {
-		//guiones = "----------".substring(0, (LongitudPalabra));
-				//return guiones;
-	//}
-	 
+		return guiones;}	 
 	public static void main(String[] args) {
+		listaFalladas = new ListaFalladas();
 		palabraElegida = ListaPalabras.palabraAleatoria();
 		LongitudPalabra = palabraElegida.length();
 		nuevosGuiones = guiones;
 		//System.out.println("La plabra es " + ListaPalabras.palabraAleatoria());
 		guiones = soloGuiones_A();
-	
-		while(true) {
+		nuevosGuionesAnterior = guiones;
+		System.out.println("Palabra: " + guiones);
+		while( ! nuevosGuiones.contains(palabraElegida)) {
+			listaFalladas.MostrarLista();
 			letra = VistaYTeclado.pedirletra();
 			System.out.println("La letra es " + letra);
 			
@@ -35,12 +35,16 @@ public class JuegoAhorcado {
 			if (palabraElegida.contains(letra)) {
 				cuandoAciertaLetra();
 			} else {
-				System.out.println("No contiene");
+				contadorFallos = contadorFallos + 1; // contadorFallos ++
+				System.out.println("Has fallado " + contadorFallos + " veces" );
+				listaFalladas.AgregarLetra(letra);
+				if (contadorFallos > 6)
+					return;
 			}		
 		}
+		
+		System.out.println("¡¡Felicidades!! Has ganado");
 	}
-	
-	
 	static void cuandoAciertaLetra() {
 		int posicion;
 				 String letraPos;

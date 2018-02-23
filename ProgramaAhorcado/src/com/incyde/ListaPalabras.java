@@ -1,11 +1,15 @@
 package com.incyde;
 
+import java.util.*;
+
 public class ListaPalabras {
 	
-	static String[] palabras = {"vaso", "luz", "pan", "ordenador"};
+	static String[] palabras = {"aguila", "pilum", "gladius", "vaso", "luz", "pan", "ordenador"};
 	
 	public static String palabraAleatoria() {
-		// De momento, dame el primer elemento
-		return palabras[3];
+		// Buscamos un numero aleatorio y devolvemos la palbra en esa posicion
+		Random objRandom = new Random();
+		int indiceAleatorio = objRandom.nextInt(palabras.length);
+		return palabras[indiceAleatorio];
 	}
 }

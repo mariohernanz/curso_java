@@ -4,18 +4,18 @@ public class Triangulo extends Figura {
 	public float[] longitudes;
 	public float base;
 	public float altura;
-	public String color;
-	
-	public Triangulo(String color) {
-		this.color = color;
+		
+	public Triangulo(int base,int altura) {
+		super("transparente");
+		this.base = base;
+		this.altura = altura;	
 	}
-	
-	public Triangulo(String color,int base,int altura) {
-		this.color = color;
+	public Triangulo(int base,int altura,String color) {
+		super(color);
 		this.base = base;
 		this.altura = altura;
-		
 	}
+	
 	public float perimetro() {
 	
 		return longitudes[0] + longitudes[1] + longitudes[2];
